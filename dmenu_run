@@ -5,4 +5,4 @@ x_pos=$(echo $dmenu_coords | cut -d' ' -f1)
 y_pos=$(echo $dmenu_coords | cut -d' ' -f2)
 width=$(echo $dmenu_coords | cut -d' ' -f3)
 
-dmenu_path | dmenu "$@" -l 6 -x $x_pos -y $y_pos -z $width| ${SHELL:-"/bin/sh"} &
+dmenu_path | dmenu "$@" -l 6 -g 3 -x $x_pos -y $y_pos -z $width | ${SHELL:-"/bin/sh"} &
