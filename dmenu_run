@@ -1,8 +1,4 @@
 #!/bin/sh
 
-dmenu_coords=$(dmenu_get_position 1200)
-x_pos=$(echo $dmenu_coords | cut -d' ' -f1)
-y_pos=$(echo $dmenu_coords | cut -d' ' -f2)
-width=$(echo $dmenu_coords | cut -d' ' -f3)
-
-dmenu_path | dmenu "$@" -l 6 -g 3 -x $x_pos -y $y_pos -z $width | ${SHELL:-"/bin/sh"} &
+source dmenu_get_position
+dmenu_path | dmenu "$@" -p "Select Program:" -l 12 -x $DMENU_X_POSITION -y $DMENU_Y_POSITION -z $DMENU_WIDTH | ${SHELL:-"/bin/sh"} &
