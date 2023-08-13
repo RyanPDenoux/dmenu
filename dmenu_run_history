@@ -24,7 +24,7 @@ awk -v histfile=$historyfile '
 			x[$0]=1
 		}
 	} !x[$0]++ ' "$cache" \
-	| dmenu -i -l 12 -p "Run:" -x $DMENU_X_POSITION -y $DMENU_Y_POSITION -z $DMENU_WIDTH "$@" \
+	| dmenu -i -l 12 -p "Run:" -c "$@" \
 	| awk -v histfile=$historyfile '
 		BEGIN {
 			FS=OFS="\t"

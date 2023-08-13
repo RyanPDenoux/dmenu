@@ -1,4 +1,3 @@
 #!/bin/sh
 
-source dmenu_get_position
-dmenu_path | dmenu "$@" -p "Select Program:" -l 12 -x $DMENU_X_POSITION -y $DMENU_Y_POSITION -z $DMENU_WIDTH | ${SHELL:-"/bin/sh"} &
+dmenu_path | dmenu "$@" -p "Select Program:" -l 12 -c | ${SHELL:-"/bin/sh"} &
